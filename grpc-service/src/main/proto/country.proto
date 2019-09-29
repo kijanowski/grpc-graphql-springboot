@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "grpcgraphql.country";
+
+// The country service definition.
+service CountryService {
+  // Retrieve requested countries by ID
+  rpc GetCountries(CountryRequest) returns (CountriesReply) {}
+}
+
+message CountryRequest {
+  repeated string id = 1;
+}
+
+// The response message containing countries
+message CountriesReply {
+  repeated string country = 1;
+}
